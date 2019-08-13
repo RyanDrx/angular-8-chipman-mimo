@@ -1,0 +1,14 @@
+<section>
+
+	<mat-slider thumbLabel tickInterval="auto" min="1" max="150" step="1" value="1" [(ngModel)]="value" (input)="sliderChange($event)">
+	</mat-slider>
+
+	<mat-form-field>
+		<input matInput type="number" placeholder="Items" [(ngModel)]="value" />
+    </mat-form-field>
+ <mat-card>
+  <mat-card-content>   
+  <h1>${{cost}}</h1>
+  </mat-card-content>
+</mat-card>
+</section>
