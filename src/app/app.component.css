@@ -3,5 +3,9 @@ p {
 }
 
 mat-slider {
-  width: 90vw;
+  width: 99%;
+}
+
+table {
+  width: 100%;
 }

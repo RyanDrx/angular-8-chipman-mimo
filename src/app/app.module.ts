@@ -7,6 +7,10 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -16,7 +20,12 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatSliderModule,
     MatInputModule,
-    MatCardModule],
+    MatCardModule,
+    MatListModule,
+    MatDividerModule,
+    MatGridListModule,
+    MatTableModule
+  ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
