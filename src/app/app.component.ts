@@ -18,7 +18,7 @@ export interface Worker {
 
 const ESTIMATES: Estimate[] = [
   {
-    minPieces: 1, maxPieces: 15, workers: [
+    minPieces: 0, maxPieces: 15, workers: [
       { position: 'Supervisor', quantity: 1, hours: 5, regularCost: 0.00, overtimeCost: 0.00 },
       { position: 'Driver', quantity: 1, hours: 5, regularCost: 450.00, overtimeCost: 500.00 },
       { position: 'Installer', quantity: 1, hours: 5, regularCost: 0.00, overtimeCost: 0.00 },
@@ -84,7 +84,7 @@ export class AppComponent implements OnInit {
     this.estimate = null;
     this.workers = null;
   }
-  
+
 
   sliderChange(event) {
     this.value = event.value;
@@ -95,11 +95,15 @@ export class AppComponent implements OnInit {
 
   computeEstimate() {
     this.estimated = true;
+    try {
+      const belowMax = ESTIMATES.filter(
+        (est: Estimate) => this.value <= est.maxPieces);
+      return belowMax.filter((est: Estimate) => this.value > est.minPieces)[0];
+    }
+    catch {
+      return ESTIMATES[0];
+    }
 
-    const belowMax = ESTIMATES.filter(
-      (est: Estimate) => this.value <= est.maxPieces);
-
-    return belowMax.filter((est: Estimate) => this.value > est.minPieces)[0];
   }
 
 }
