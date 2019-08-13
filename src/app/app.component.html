@@ -20,7 +20,7 @@
         <mat-card-content>
             <div *ngIf="estimated">
                 <mat-grid-list cols="4" rowHeight="150px">
-                    <mat-grid-tile [colspan]="3" [rowspan]="2">
+                    <mat-grid-tile [colspan]="4" [rowspan]="2">
                         <table mat-table [dataSource]="workers">
                             <ng-container matColumnDef="position">
                                 <th mat-header-cell *matHeaderCellDef> Pos. </th>
@@ -51,10 +51,10 @@
                             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                         </table>
                     </mat-grid-tile>
-                    <mat-grid-tile [colspan]="1" [rowspan]="1" s>
+                    <mat-grid-tile [colspan]="2" [rowspan]="1" s>
                         <h3>Regular: <strong>{{estimate.regularTotal | currency}}</strong> </h3>
                     </mat-grid-tile>
-                    <mat-grid-tile [colspan]="1" [rowspan]="1">
+                    <mat-grid-tile [colspan]="2" [rowspan]="1">
                         <h3>Overtime: <strong>{{estimate.overtimeTotal | currency}}</strong> </h3>
                     </mat-grid-tile>
                 </mat-grid-list>
